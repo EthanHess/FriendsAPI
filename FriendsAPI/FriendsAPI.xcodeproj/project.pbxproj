@@ -14,6 +14,8 @@
 		27DC64051BEAA01100EEABFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27DC64041BEAA01100EEABFA /* Assets.xcassets */; };
 		27DC64081BEAA01100EEABFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DC64061BEAA01100EEABFA /* LaunchScreen.storyboard */; };
 		27DC64101BEAA17A00EEABFA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27DC640F1BEAA17A00EEABFA /* Podfile */; settings = {ASSET_TAGS = (); }; };
+		27F85CAC1BED6B2E0057816E /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F85CAB1BED6B2E0057816E /* NetworkController.m */; settings = {ASSET_TAGS = (); }; };
+		27F85CAF1BED6D090057816E /* FriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F85CAE1BED6D090057816E /* FriendController.m */; settings = {ASSET_TAGS = (); }; };
 		BEF014B930D61B83D6D9C067 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E5D48C6668795D97732F47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,10 @@
 		27DC64071BEAA01100EEABFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27DC64091BEAA01100EEABFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DC640F1BEAA17A00EEABFA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		27F85CAA1BED6B2E0057816E /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		27F85CAB1BED6B2E0057816E /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		27F85CAD1BED6D090057816E /* FriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendController.h; sourceTree = "<group>"; };
+		27F85CAE1BED6D090057816E /* FriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendController.m; sourceTree = "<group>"; };
 		29B8E50B90E58590DBF104D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7E5D48C6668795D97732F47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +78,7 @@
 				27DC63FC1BEAA01100EEABFA /* AppDelegate.m */,
 				27DC63FE1BEAA01100EEABFA /* ViewController.h */,
 				27DC63FF1BEAA01100EEABFA /* ViewController.m */,
+				27F85CB01BED6D120057816E /* Controllers */,
 				27DC64011BEAA01100EEABFA /* Main.storyboard */,
 				27DC64041BEAA01100EEABFA /* Assets.xcassets */,
 				27DC64061BEAA01100EEABFA /* LaunchScreen.storyboard */,
@@ -87,6 +94,17 @@
 				27DC63F91BEAA01100EEABFA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27F85CB01BED6D120057816E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27F85CAD1BED6D090057816E /* FriendController.h */,
+				27F85CAE1BED6D090057816E /* FriendController.m */,
+				27F85CAA1BED6B2E0057816E /* NetworkController.h */,
+				27F85CAB1BED6B2E0057816E /* NetworkController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		82FF72C4207F19A24A0B3917 /* Frameworks */ = {
@@ -212,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F85CAC1BED6B2E0057816E /* NetworkController.m in Sources */,
 				27DC64001BEAA01100EEABFA /* ViewController.m in Sources */,
 				27DC63FD1BEAA01100EEABFA /* AppDelegate.m in Sources */,
+				27F85CAF1BED6D090057816E /* FriendController.m in Sources */,
 				27DC63FA1BEAA01100EEABFA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
