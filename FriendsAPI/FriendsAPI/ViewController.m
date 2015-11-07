@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FriendController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -20,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //retrieves friend array and relaoads views
+    
+    [[FriendController sharedInstance]getFriendsWithCompletion:^(NSArray *friends) {
+        
+        [self.tableView reloadData];
+    }];
     
     //sets up scroll view
     
@@ -73,6 +81,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    
+    NSDictionary *friend = [FriendController sharedInstance].resultFriends[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend[@"first_name"], friend[@"last_name"]];
+    cell.detailTextLabel.text = friend[@"status"];
+    
+    NSString *imageUrl = friend[@"img"];
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: imageUrl]];
+    
+    cell.imageView.image = [UIImage imageWithData:imageData];
+    
+    UIView *availability = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    availability.layer.cornerRadius = 10;
+    availability.layer.borderWidth = 2;
+    
+    if ([friend[@"available"] boolValue] == YES) {
+        availability.backgroundColor = [UIColor redColor];
+        availability.layer.borderColor = [UIColor redColor].CGColor;
+    } else {
+        availability.backgroundColor = [UIColor blueColor];
+        availability.layer.borderColor = [UIColor blueColor].CGColor;
+    }
+    
+    cell.accessoryView = availability;
     
     cell.layer.cornerRadius = 10;
     cell.layer.borderWidth = 1;
@@ -88,7 +120,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return [FriendController sharedInstance].resultFriends.count;
 }
 
 #pragma CollectionView methods
